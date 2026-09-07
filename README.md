@@ -19,7 +19,7 @@ Building software, simulations, and systems to understand how things work.
 <div align="center">
 
 <img
-  src="https://streak-stats.demolab.com?user=jahaanb7&theme=github-dark-blue&hide_border=true"
+  src="https://streak-stats.demolab.com?user=jahaanb7&theme=github-dark-blue&hide_border=none"
   width="650"
   height="220"
   alt="Jahaan's GitHub Streak"
