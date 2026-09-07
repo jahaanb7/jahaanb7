@@ -1,16 +1,45 @@
-## Hi there 👋
+<div align="center">
 
-<!--
-**jahaanb7/jahaanb7** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+# J A H A A N
 
-Here are some ideas to get you started:
+**Physics · Computer Science · AI · Engineering**
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Building systems to understand how things work.
+
+<br>
+
+[GitHub](https://github.com/YOUR_USERNAME) · [LinkedIn](#) · [Website](#)
+
+</div>
+
+---
+
+### CURRENTLY
+
+```text
+Physics          Quantum Mechanics · Cosmology · Relativity
+Computer Science Graphics · Algorithms · Systems
+AI / ML          Computer Vision · Multimodal AI · LLMs
+Engineering      Electronics · CAD · Robotics · PCB Design
+Mathematics      Applied Mathematics · Mathematical Physics
+```
+
+### PROJECTS
+
+`01`  Software Rasterizer — Java
+`02`  Fluid Simulation — C
+`03`  Multimodal AI Assistant — Python
+`04`  Quantum Mechanics Visualizations
+`05`  CAD / PCB / Robotics Systems
+
+---
+
+<div align="center">
+
+`learn → build → simulate → understand`
+
+<br><br>
+
+<img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&hide_border=true&theme=transparent" />
+
+</div>
