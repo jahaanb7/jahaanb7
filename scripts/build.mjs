@@ -173,8 +173,8 @@ function stats(t) {
   out += `<rect x="${pad}" y="${y}" width="${width - pad * 2}" height="${wh}" rx="10" fill="${t.tile}" stroke="${t.border}"/>
 <text x="${pad + 24}" y="${y + 38}" class="hello">Welcome to Jahaan's Hub</text>
 <text x="${pad + 24}" y="${y + 62}" class="sub">Explore my contributions and projects</text>
-<rect x="${width - pad - 24 - 360}" y="${y + 24}" width="360" height="36" rx="18" fill="none" stroke="${t.link}"/>
-<text x="${width - pad - 24 - 180}" y="${y + 47}" text-anchor="middle" class="link">${PORTFOLIO} ↗</text>\n`;
+<rect x="${width - pad - 24 - 260}" y="${y + 24}" width="260" height="36" rx="18" fill="none" stroke="${t.link}"/>
+<text x="${width - pad - 24 - 130}" y="${y + 47}" text-anchor="middle" class="link">Click me to view my portfolio ↗</text>\n`;
   y += wh + gap;
   // tiles
   const tiles = [
@@ -243,7 +243,7 @@ function stats(t) {
   y += lbH + pad;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${y}" viewBox="0 0 ${width} ${y}" role="img" aria-label="GitHub activity: ${cal.totalContributions} contributions in the last year, ${user.repositories.totalCount} public repositories. Top languages: ${esc(langNames)}.">
-<style>text{font-family:${SANS};fill:${t.text}}.big{font-size:30px;font-weight:700;fill:${t.title}}.cap{font-size:11px;letter-spacing:1.2px;fill:${t.muted}}.cap2{font-size:12px;fill:${t.muted}}.sec{font-size:16px;font-weight:600;fill:${t.title}}.hello{font-size:22px;font-weight:600;fill:${t.title}}.sub{font-size:14px;fill:${t.muted}}.link{font-size:12.5px;font-weight:600;fill:${t.link}}.lang{font-size:13px}.pct{fill:${t.muted}}</style>
+<style>text{font-family:${SANS};fill:${t.text}}.big{font-size:30px;font-weight:700;fill:${t.title}}.cap{font-size:11px;letter-spacing:1.2px;fill:${t.muted}}.cap2{font-size:12px;fill:${t.muted}}.sec{font-size:16px;font-weight:600;fill:${t.title}}.hello{font-size:22px;font-weight:600;fill:${t.title}}.sub{font-size:14px;fill:${t.muted}}.link{font-size:14px;font-weight:600;fill:${t.link}}.lang{font-size:13px}.pct{fill:${t.muted}}</style>
 ${out}</svg>\n`;
 }
 
