@@ -111,7 +111,7 @@ const rows = [
   ['kv', 'Kernel', 'Student engineer'],
   ['blank'],
   ['kv', 'Interests', 'Physics, CS, AI/ML, Engineering, Maths'],
-  ['kv', 'Languages.Code', langNames],
+  ['kv', 'Languages.Code', 'Python, Java, C, C++'],
   ['kv', 'Languages.Hardware', 'KiCad, Fusion 360'],
   ['blank'],
   ['kv', 'Building.Software', 'Renderers, simulations, AI assistant'],
@@ -168,6 +168,12 @@ function stats(t) {
   const width = 900, pad = 24, gap = 16;
   let y = pad;
   let out = '';
+  // welcome panel
+  const wh = 84;
+  out += `<rect x="${pad}" y="${y}" width="${width - pad * 2}" height="${wh}" rx="10" fill="${t.tile}" stroke="${t.border}"/>
+<text x="${pad + 24}" y="${y + 38}" class="hello">Welcome to Jahaan's Hub</text>
+<text x="${pad + 24}" y="${y + 62}" class="sub">Explore my contributions and projects</text>\n`;
+  y += wh + gap;
   // tiles
   const tiles = [
     [fmt(cal.totalContributions), 'CONTRIBUTIONS'],
@@ -235,7 +241,7 @@ function stats(t) {
   y += lbH + pad;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${y}" viewBox="0 0 ${width} ${y}" role="img" aria-label="GitHub activity: ${cal.totalContributions} contributions in the last year, ${user.repositories.totalCount} public repositories. Top languages: ${esc(langNames)}.">
-<style>text{font-family:${SANS};fill:${t.text}}.big{font-size:30px;font-weight:700;fill:${t.title}}.cap{font-size:11px;letter-spacing:1.2px;fill:${t.muted}}.cap2{font-size:12px;fill:${t.muted}}.sec{font-size:16px;font-weight:600;fill:${t.title}}.lang{font-size:13px}.pct{fill:${t.muted}}</style>
+<style>text{font-family:${SANS};fill:${t.text}}.big{font-size:30px;font-weight:700;fill:${t.title}}.cap{font-size:11px;letter-spacing:1.2px;fill:${t.muted}}.cap2{font-size:12px;fill:${t.muted}}.sec{font-size:16px;font-weight:600;fill:${t.title}}.hello{font-size:22px;font-weight:600;fill:${t.title}}.sub{font-size:14px;fill:${t.muted}}.lang{font-size:13px}.pct{fill:${t.muted}}</style>
 ${out}</svg>\n`;
 }
 
