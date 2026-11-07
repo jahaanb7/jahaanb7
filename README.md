@@ -1,14 +1,12 @@
-<div align="left">
+<a href="https://jahaanb7.github.io/Jahaans-Workspace-Portfolio/">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/card-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/card-light.svg">
+    <img src="assets/card-dark.svg" width="100%" alt="Jahaan Bhavsar, student engineer, class of 2028. Interests: physics, computer science, AI/ML, engineering and maths. Builds renderers, simulations and an AI assistant, and is designing a rocket, a Chladni plate and a radio dish.">
+  </picture>
+</a>
 
-<img width="1000" height="300" alt="Jahaan Bhavsar" src="https://github.com/user-attachments/assets/33f77ee8-61db-4eff-ba18-1b417ce0f8e9" />
-
-# Jahaan Bhavsar
-
-`Physics` · `Computer Science` · `AI/ML` · `Engineering` · `Mathematics`
-
-Building software, simulations, and systems to understand how things work.
-
-</div>
+Building software, simulations and hardware to understand how things work. Every project, with its question and where it stands, is in my **[portfolio ↗](https://jahaanb7.github.io/Jahaans-Workspace-Portfolio/)**.
 
 ## Simulations and graphics
 
@@ -69,3 +67,13 @@ Building software, simulations, and systems to understand how things work.
 | [Buffy](https://github.com/jahaanb7/J.A.R.V.I.S) | Electron and TypeScript desktop assistant; file writes and commands wait for approval |
 | [Lorenz Attractor](https://github.com/jahaanb7/Lorenz-Attractor-Simulation) | Notebook on chaos, phase space and the Van der Pol oscillator |
 | [Machine Learning Models](https://github.com/jahaanb7/Machine-Learning-Models) | Linear and logistic regression written with NumPy |
+
+## Activity
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/stats-light.svg">
+  <img src="assets/stats-dark.svg" width="100%" alt="Contributions over the last year, public repositories and languages used">
+</picture>
+
+<sub>Both cards rebuild every day from the GitHub API (<a href="scripts/build.mjs">scripts/build.mjs</a>). The ASCII head is Suzanne, drawn by the same pipeline as Rasterix.</sub>
