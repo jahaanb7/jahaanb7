@@ -6,11 +6,11 @@
   </picture>
 </a>
 
-## [My portfolio ↗](https://jahaanb7.github.io/Jahaans-Workspace-Portfolio/)
-
+<a href="https://jahaanb7.github.io/Jahaans-Workspace-Portfolio/">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/stats-light.svg">
-  <img src="assets/stats-dark.svg" width="100%" alt="Contributions over the last year, public repositories and languages used">
+  <img src="assets/stats-dark.svg" width="100%" alt="Contributions over the last year, public repositories and languages used. Links to the portfolio.">
 </picture>
+</a>
 
