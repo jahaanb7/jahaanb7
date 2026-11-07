@@ -2,10 +2,10 @@
 // Usage: GITHUB_TOKEN=... node scripts/build.mjs
 // Writes assets/card-{dark,light}.svg and assets/stats-{dark,light}.svg.
 // Runs daily in .github/workflows/refresh.yml; no dependencies beyond Node 20.
-import { readFile, writeFile } from 'node:fs/promises';
+import { writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { createRasterizer } from './lib/raster-core.js';
+import { boombox } from './lib/boombox.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const LOGIN = 'jahaanb7';
@@ -77,38 +77,9 @@ let dd = now.getDate() - created.getDate();
 if (dd < 0) { months--; dd += new Date(now.getFullYear(), now.getMonth(), 0).getDate(); }
 const uptime = `${Math.floor(months / 12)} yr, ${months % 12} mo, ${dd} d`;
 
-// ---------- ASCII Suzanne, drawn by the Rasterix pipeline ----------
-const mesh = JSON.parse(await readFile(path.join(root, 'scripts/lib/suzanne.json'), 'utf8'));
-const COLS = 62, ROWS = 34; // a character cell is about twice as tall as it is wide
-const RS = 480;
-const rz = createRasterizer(RS, RS, { background: '#000000', ink: '#ffffff', cameraDistance: 3.2 });
-rz.render(mesh, { yaw: -0.45, pitch: 0.16, mode: 'shaded' });
-// Crop to the drawn head, then fit it into the character grid.
-let x0 = RS, y0 = RS, x1 = 0, y1 = 0;
-for (let y = 0; y < RS; y++) for (let x = 0; x < RS; x++) if (rz.color[(y * RS + x) * 4] > 0) {
-  x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y);
-}
-const cellW = Math.max((x1 - x0 + 1) / COLS, (y1 - y0 + 1) / (ROWS * 2));
-const cellH = cellW * 2;
-const ox = (x0 + x1) / 2 - (COLS * cellW) / 2, oy = (y0 + y1) / 2 - (ROWS * cellH) / 2;
-const RAMP = " .:-=+*#%@";
-const ascii = [];
-for (let r = 0; r < ROWS; r++) {
-  let line = '';
-  for (let c = 0; c < COLS; c++) {
-    let sum = 0, hit = 0, n = 0;
-    for (let y = Math.floor(oy + r * cellH); y < oy + (r + 1) * cellH; y++) for (let x = Math.floor(ox + c * cellW); x < ox + (c + 1) * cellW; x++) {
-      n++;
-      if (x < 0 || y < 0 || x >= RS || y >= RS) continue;
-      const v = rz.color[(y * RS + x) * 4];
-      sum += v; if (v > 0) hit++;
-    }
-    const cover = n ? hit / n : 0;
-    const lum = hit ? sum / hit / 255 : 0;
-    line += cover < 0.3 ? ' ' : RAMP[Math.min(RAMP.length - 1, 1 + Math.round(lum * (RAMP.length - 2)))];
-  }
-  ascii.push(line);
-}
+// ---------- ASCII boom box ----------
+const COLS = 62, ROWS = 26;
+const ascii = boombox(COLS, ROWS);
 
 // ---------- SVG helpers ----------
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -164,7 +135,7 @@ function leader(key, value, width) {
 
 function card(t) {
   const fs = 14, lh = 20, cw = fs * 0.6, pad = 24;
-  const AFS = 10, ALH = 13; // art is set smaller so the head has more detail
+  const AFS = 10, ALH = 13; // art is set smaller so the drawing fits beside the text
   const leftW = COLS * AFS * 0.6;
   const rx = pad + leftW + 28;
   const width = Math.round(rx + W * cw + pad);
